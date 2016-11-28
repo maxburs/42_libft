@@ -13,16 +13,16 @@
 #include <stdlib.h>
 #include <string.h>
 
-void	*ft_memset(void *b, int c, site_t len)
+void	*ft_memset(void *b, int c, size_t len)
 {
 	unsigned char	character;
-	int				i;
+	size_t			i;
 
 	character = (unsigned char)c;
 	i = 0;
 	while (i < len)
 	{
-		b[i] = character;
+		((unsigned char *)b)[i] = character;
 		i++;
 	}
 	return (b);
