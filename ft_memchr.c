@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mburson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/28 10:04:47 by mburson           #+#    #+#             */
-/*   Updated: 2016/11/28 10:04:50 by mburson          ###   ########.fr       */
+/*   Created: 2016/11/29 14:02:26 by mburson           #+#    #+#             */
+/*   Updated: 2016/11/29 14:02:30 by mburson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include <string.h>
 
-# include <string.h>
+void	*ft_memchr(const void *s, int c, size_t n)
+{
+	size_t			i;
+	unsigned char	character;
 
-void	*ft_memset(void *b, int c, size_t len);
-void	*ft_bzero(void *s, size_t len);
-void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n);
-void	*ft_memmove(void *dst, const void *restrict src, size_t n);
-void	*ft_memchr(const void *s, int c, size_t n);
-
-char	*ft_strnew(size_t size);
-
-#endif
+	character = (unsigned char)c;
+	i = 0;
+	while (i < n)
+	{
+		if (((unsigned char*)s)[i] == character)
+			return ((void*)s + i);
+		i++;
+	}
+	return (NULL);
+}
