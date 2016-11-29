@@ -2,6 +2,7 @@ NAME = libft.a
 
 OBJ = src/ft_memset.o\
 	src/ft_bzero.o\
+	src/ft_memcpy.o\
 	src/ft_strnew.o
 
 CFLAGS = -Wall -Wextra -Werror -I .
@@ -14,6 +15,7 @@ $(NAME): $(OBJ)
 
 src/ft_memset.o: src/ft_memset.c
 src/ft_bzero.o: src/ft_bzero.c
+src/ft_memcpy.o: src/ft_memcpy.c
 
 src/ft_strnew.o: src/ft_strnew.c
 
