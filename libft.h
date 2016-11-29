@@ -16,7 +16,7 @@
 # include <string.h>
 
 void	*ft_memset(void *b, int c, size_t len);
-void	*ft_bzero(void *s, size_t);
+void	*ft_bzero(void *s, size_t len);
 
 char	*ft_strnew(size_t size);
 
