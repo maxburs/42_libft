@@ -1,9 +1,9 @@
 NAME = libft.a
 
-OBJ = src/ft_memset.o\
-	src/ft_bzero.o\
-	src/ft_memcpy.o\
-	src/ft_strnew.o
+OBJ = ft_memset.o\
+	ft_bzero.o\
+	ft_memcpy.o\
+	ft_strnew.o
 
 CFLAGS = -Wall -Wextra -Werror -I .
 
@@ -13,11 +13,11 @@ $(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 
-src/ft_memset.o: src/ft_memset.c
-src/ft_bzero.o: src/ft_bzero.c
-src/ft_memcpy.o: src/ft_memcpy.c
+ft_memset.o: ft_memset.c
+ft_bzero.o: ft_bzero.c
+ft_memcpy.o: ft_memcpy.c
 
-src/ft_strnew.o: src/ft_strnew.c
+ft_strnew.o: ft_strnew.c
 
 clean:
 	rm -f $(OBJ)
