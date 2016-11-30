@@ -1,34 +1,34 @@
 NAME = libft.a
 
-OBJ = ft_memset.o\
+OBJS = ft_memset.o\
 	ft_bzero.o\
 	ft_memcpy.o\
 	ft_memmove.o\
 	ft_memchr.o\
 	ft_strlen.o\
 	ft_strdup.o\
+	ft_strcpy.o\
+	ft_strncpy.o\
 	ft_strnew.o
 
-CFLAGS = -Wall -Wextra -Werror -I .
+NEEDLIB = ft_strdup.o\
+	ft_strnew.o
+
+CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	ar rc $(NAME) $(OBJ)
-	ranlib $(NAME)
+$(NAME): $(OBJS)
+	ar rc $@ $^
+	ranlib $@
 
-ft_memset.o: ft_memset.c
-ft_bzero.o: ft_bzero.c
-ft_memcpy.o: ft_memcpy.c
-ft_memmove.o: ft_memmove.c
-ft_memchr.o: ft_memchr.c
-ft_strlen.o: ft_strlen.c
-ft_strdup.o: ft_strdup.c
+%.o: %.c
+	gcc $(CFLAGS) -I . -c -o $@ $<
 
-ft_strnew.o: ft_strnew.c
+$(NEEDLIB): libft.h
 
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJS)
 fclean: clean
 	rm -f $(NAME)
 re: fclean all
