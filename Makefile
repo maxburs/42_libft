@@ -18,6 +18,7 @@ OBJS = ft_memset.o\
 	ft_strnstr.o\
 	ft_strcmp.o\
 	ft_strncmp.o\
+	ft_atoi.o\
 	ft_strnew.o
 
 NEEDLIB = ft_strdup.o\
