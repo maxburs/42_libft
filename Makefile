@@ -12,6 +12,7 @@ OBJS = ft_memset.o\
 	ft_strcat.o\
 	ft_strncat.o\
 	ft_strlcat.o\
+	ft_strchr.o\
 	ft_strnew.o
 
 NEEDLIB = ft_strdup.o\
