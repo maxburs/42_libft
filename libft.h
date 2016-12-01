@@ -30,6 +30,7 @@ size_t	ft_strlcat(char *restrict s1, const char *restrict s2, size_t size);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strstr(const char *big, const char *little);
+char	*ft_strnstr(const char *big, const char *little, size_t len);
 
 char	*ft_strnew(size_t size);
 
