@@ -34,6 +34,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len);
 int		ft_strcmp(char *s1, char *s2);
 int		ft_strncmp(char *s1, char *s2, size_t n);
 int		ft_atoi(const char *str);
+int		ft_isalpha(int c);
+int		ft_isdigit(int c);
 
 char	*ft_strnew(size_t size);
 
