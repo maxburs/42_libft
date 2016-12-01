@@ -35,5 +35,5 @@ char	*ft_strstr(const char *big, const char *little)
 		}
 		index++;
 	}
-	return (0);
+	return (NULL);
 }
