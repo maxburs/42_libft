@@ -28,6 +28,7 @@ OBJS = ft_memset.o\
 	ft_tolower.o\
 	\
 	ft_memalloc.o\
+	ft_memdel.o\
 	ft_strnew.o
 
 NEEDLIB = ft_strdup.o\
