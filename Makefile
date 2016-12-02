@@ -23,6 +23,7 @@ OBJS = ft_memset.o\
 	ft_isdigit.o\
 	ft_isalnum.o\
 	ft_isascii.o\
+	ft_isprint.o\
 	ft_strnew.o
 
 NEEDLIB = ft_strdup.o\
