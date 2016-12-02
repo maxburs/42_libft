@@ -49,5 +49,6 @@ void	ft_strdel(char **s);
 void	ft_strclr(char *s);
 void	ft_striter(char *s, void (*f)(char *));
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+void	ft_strmap(char *s, char (*f)(char));
 
 #endif
