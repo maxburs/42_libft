@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-
 void	ft_strmap(char *s, char (*f)(char))
 {
 	unsigned int i;
