@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include <libft.h>
 #include <string.h>
 
@@ -25,7 +24,7 @@ size_t	ft_strlcat(char *restrict s1, const char *restrict s2, size_t size)
 	j = 0;
 	while (s2[j])
 	{
-		if ( i < size - 1)
+		if (i < size - 1)
 			s1[i] = s2[j];
 		i++;
 		j++;

@@ -15,7 +15,7 @@ static _Bool	is_upper(int c)
 	return (64 < c && c < 91);
 }
 
-int		ft_tolower(int c)
+int				ft_tolower(int c)
 {
 	if (is_upper(c))
 		return (c + 32);

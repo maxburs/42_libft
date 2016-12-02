@@ -16,8 +16,8 @@
 void	*ft_memalloc(size_t size)
 {
 	size_t	i;
-
 	void	*new;
+
 	if (!(new = malloc(size)))
 		return (NULL);
 	i = 0;
@@ -26,5 +26,5 @@ void	*ft_memalloc(size_t size)
 		((unsigned char*)new)[i] = 0;
 		i++;
 	}
-	return (new);	
+	return (new);
 }

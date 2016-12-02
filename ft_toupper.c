@@ -15,7 +15,7 @@ static _Bool	is_lower(int c)
 	return (96 < c && c < 123);
 }
 
-int		ft_toupper(int c)
+int				ft_toupper(int c)
 {
 	if (is_lower(c))
 		return (c - 32);
