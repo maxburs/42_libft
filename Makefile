@@ -46,13 +46,15 @@ OBJS = \
 	ft_strjoin.o\
 	ft_strtrim.o\
 	ft_strsplit.o\
-	ft_itoa.o
+	ft_itoa.o\
+	ft_putchar.o
 
 NEEDLIB = ft_strdup.o\
 	ft_strnew.o\
 	ft_strjoin.o\
 	ft_strtrim.o\
-	ft_strsplit.o
+	ft_strsplit.o\
+	ft_itoa.o
 
 CFLAGS = -Wall -Wextra -Werror
 
