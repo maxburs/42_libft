@@ -38,10 +38,12 @@ OBJS = ft_memset.o\
 	ft_strmapi.o\
 	ft_strequ.o\
 	ft_strnequ.o\
-	ft_strsub.o
+	ft_strsub.o\
+	ft_strjoin.o
 
 NEEDLIB = ft_strdup.o\
-	ft_strnew.o
+	ft_strnew.o\
+	ft_strjoin.o
 
 CFLAGS = -Wall -Wextra -Werror
 
