@@ -1,41 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mburson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/02 17:14:00 by mburson           #+#    #+#             */
-/*   Updated: 2016/12/02 17:14:02 by mburson          ###   ########.fr       */
+/*   Created: 2016/12/02 18:52:42 by mburson           #+#    #+#             */
+/*   Updated: 2016/12/02 18:52:45 by mburson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include <stdlib.h>
+#include <string.h>
 #include <libft.h>
+#include <stdio.h>
 
-static char		*strplace(char *restrict dst, const char *restrict src)
+static _Bool	is_whitespace(char c)
 {
-	size_t i;
-
-	i = 0;
-	while (src[i])
-	{
-		(dst)[i] = (src)[i];
-		i++;
-	}
-	return (&(dst[i]));
+	return (c == ' ' || c == '\n' || c == '\t');
 }
 
-char			*ft_strjoin(char const *s1, char const *s2)
+char			*ft_strtrim(char const *s)
 {
-	size_t	l;
+	size_t	start;
+	size_t	end;
 	char	*new;
 
-	l = ft_strlen(s1) + ft_strlen(s2);
-	if (!(new = (char*)malloc(sizeof(char) * (l + 1))))
+	start = 0;
+	end = ft_strlen(s) - 1;
+	while (is_whitespace(s[start]))
+		start++;
+	while (is_whitespace(s[end]))
+		end--;
+	if (!(new = (char*)malloc(end - start + 2)))
 		return (NULL);
-	new[l] = '\0';
-	strplace(strplace(new, s1), s2);
+	new[end - start + 2] = '\0';
+	ft_strncpy(new, &(s[start]), end - start + 1);
 	return (new);
 }
