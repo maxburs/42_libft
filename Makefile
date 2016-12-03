@@ -35,7 +35,8 @@ OBJS = ft_memset.o\
 	ft_striter.o\
 	ft_striteri.o\
 	ft_strmap.o\
-	ft_strmapi.o
+	ft_strmapi.o\
+	ft_strequ.o
 
 NEEDLIB = ft_strdup.o\
 	ft_strnew.o
