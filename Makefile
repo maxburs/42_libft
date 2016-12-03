@@ -1,6 +1,9 @@
 NAME = libft.a
 
-OBJS = ft_memset.o\
+OBJS = \
+	ft_strplace.o\
+	\
+	ft_memset.o\
 	ft_bzero.o\
 	ft_memcpy.o\
 	ft_memmove.o\
@@ -41,10 +44,13 @@ OBJS = ft_memset.o\
 	ft_strsub.o\
 	ft_strjoin.o\
 	ft_strtrim.o\
+	ft_strsplit.o
 
 NEEDLIB = ft_strdup.o\
 	ft_strnew.o\
-	ft_strjoin.o
+	ft_strjoin.o\
+	ft_strtrim.o\
+	ft_strsplit.o
 
 CFLAGS = -Wall -Wextra -Werror
 
