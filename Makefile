@@ -45,7 +45,8 @@ OBJS = \
 	ft_strsub.o\
 	ft_strjoin.o\
 	ft_strtrim.o\
-	ft_strsplit.o
+	ft_strsplit.o\
+	ft_itoa.o
 
 NEEDLIB = ft_strdup.o\
 	ft_strnew.o\
