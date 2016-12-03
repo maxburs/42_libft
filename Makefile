@@ -2,6 +2,7 @@ NAME = libft.a
 
 OBJS = \
 	ft_strplace.o\
+	ft_numlen.o\
 	\
 	ft_memset.o\
 	ft_bzero.o\

@@ -16,6 +16,7 @@
 # include <string.h>
 
 char	*strplace(char *restrict dst, const char *restrict src);
+int 	ft_numlen(long n, long base);
 
 void	*ft_memset(void *b, int c, size_t len);
 void	*ft_bzero(void *s, size_t len);
