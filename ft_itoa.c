@@ -17,6 +17,7 @@ char	*ft_itoa(int n)
 {
 	char	*word;
 	int		i;
+	_Bool	neg;
 
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
@@ -24,13 +25,15 @@ char	*ft_itoa(int n)
 	if (!(word = (char*)malloc(sizeof(char) * (i + 1))))
 		return (NULL);
 	word[i] = '\0';
+	neg = 0;
 	if (n < 0)
 	{
 		n *= -1;
 		word[0] = '-';
+		neg = 1;
 	}
 	i--;
-	while (i >= 0)
+	while (i >= (int)neg)
 	{
 		word[i] = n % 10 + 48;
 		n /= 10;
