@@ -70,7 +70,7 @@ NEEDLIB = ft_strdup.o\
 	ft_putendl_fd.o\
 	ft_putnbr_fd.o
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 
 all: $(NAME)
 
