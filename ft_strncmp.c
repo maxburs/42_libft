@@ -21,7 +21,7 @@ int		ft_strncmp(char *s1, char *s2, size_t n)
 	{
 		if (s1[index] != s2[index])
 		{
-			return (s1[index] - s2[index]);
+			return ((unsigned char)s1[index] - (unsigned char)s2[index]);
 		}
 		index++;
 	}
