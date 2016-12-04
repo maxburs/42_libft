@@ -50,7 +50,8 @@ OBJS = \
 	ft_putchar.o\
 	ft_putstr.o\
 	ft_putendl.o\
-	ft_putnbr.o
+	ft_putnbr.o\
+	ft_putchar_fd.o
 
 NEEDLIB = ft_strdup.o\
 	ft_strnew.o\
