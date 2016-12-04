@@ -30,8 +30,10 @@ char			*ft_strtrim(char const *s)
 	end = ft_strlen(s) - 1;
 	while (is_whitespace(s[start]))
 		start++;
-	while (is_whitespace(s[end]))
+	while (is_whitespace(s[end] && end > 0))
 		end--;
+	if (start >= end)
+		return (ft_strdup("\0"));
 	if (!(new = (char*)malloc(end - start + 2)))
 		return (NULL);
 	new[end - start + 2] = '\0';
