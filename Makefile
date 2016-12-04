@@ -9,6 +9,7 @@ OBJS = \
 	ft_memcpy.o\
 	ft_memmove.o\
 	ft_memchr.o\
+	ft_memcmp.o\
 	ft_strlen.o\
 	ft_strdup.o\
 	ft_strcpy.o\
