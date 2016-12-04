@@ -11,8 +11,8 @@
 /* ************************************************************************** */
 
 #include <libft.h>
-#include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
 
 void	ft_putstr_fd(char const *s, int fd)
 {
