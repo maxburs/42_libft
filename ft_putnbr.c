@@ -16,11 +16,11 @@ static void		recurs(int n)
 {
 	if (!n)
 		return ;
-	recurs(n /10);
+	recurs(n / 10);
 	ft_putchar((char)(n % 10 + 48));
 }
 
-void	ft_putnbr(int n)
+void			ft_putnbr(int n)
 {
 	if (n == -2147483648)
 		return (ft_putstr("-2147483648"));
