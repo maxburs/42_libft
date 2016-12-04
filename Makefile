@@ -76,7 +76,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	ar rc $@ $^
-	ranlib $@
+#	ranlib $@
 
 %.o: %.c
 	gcc $(CFLAGS) -I . -c -o $@ $<
