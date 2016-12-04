@@ -10,14 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_strmap(char *s, char (*f)(char))
-{
-	unsigned int i;
+#include <libft.h>
+#include <stdlib.h>
+#include <string.h>
 
+char	*ft_strmap(char *s, char (*f)(char))
+{
+	unsigned int	i;
+	char			*new;
+
+	if(!(new = (char*)malloc(sizeof(char) * ft_strlen(s))))
+		return (NULL);
 	i = 0;
 	while (s[i])
 	{
-		s[i] = f(s[i]);
+		new[i] = f(s[i]);
 		i++;
 	}
+	new[i] = '\0';
+	return (new);
 }
