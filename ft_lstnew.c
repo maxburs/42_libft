@@ -1,39 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstprint.c                                      :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mburson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/04 16:05:24 by mburson           #+#    #+#             */
-/*   Updated: 2016/12/04 16:05:26 by mburson          ###   ########.fr       */
+/*   Created: 2016/12/04 16:16:20 by mburson           #+#    #+#             */
+/*   Updated: 2016/12/04 16:16:23 by mburson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include <libft.h>
+#include <string.h>
 
-void	ft_lstprint(t_list *link)
+t_list	*ft_lstnew(void const *content, size_t content_size)
 {
-	if (!link)
-	{
-		ft_putstr("(null list)\n");
-		return ;
-	}
-	while (link)
-	{
-		ft_putchar('[');
-		if (link->content)
-			ft_putstr(link->content);
-		else
-			ft_putstr("NULL");
-		ft_putstr("] (");
-		ft_putnbr(link->content_size);
-		ft_putchar(')');
-		link = link->next;
-		if (link)
-		{
-			ft_putstr(" -> ");
-		}
-	}
-	ft_putchar('\n');
+	t_list	*link;
+
+	if(!(link = (t_list*)malloc(sizeof(t_list))))
+		return (NULL);
+	link->content = (void*)content;
+	if (link->content)
+		link->content_size = content_size;
+	else
+		link->content_size = 0;
+	link->next = NULL;
+	return (link);
 }
