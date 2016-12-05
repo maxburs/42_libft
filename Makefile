@@ -4,6 +4,7 @@ OBJS = \
 	ft_strplace.o\
 	ft_numlen.o\
 	ft_lstprint.o\
+	ft_memdup.o\
 	\
 	ft_memset.o\
 	ft_bzero.o\
@@ -85,7 +86,7 @@ NEEDLIB = ft_strdup.o\
 	ft_lstiter.o\
 	ft_lstmap.o
 
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 

@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_memdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mburson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/04 16:16:20 by mburson           #+#    #+#             */
-/*   Updated: 2016/12/04 16:16:23 by mburson          ###   ########.fr       */
+/*   Created: 2016/12/04 19:50:23 by mburson           #+#    #+#             */
+/*   Updated: 2016/12/04 19:50:25 by mburson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <libft.h>
 #include <string.h>
+#include <errno.h>
 
-t_list	*ft_lstnew(void const *content, size_t content_size)
+void	*ft_memdup(const void *mem, size_t size)
 {
-	t_list	*link;
+	void		*new;
+	size_t		i;
 
-	if (!(link = (t_list*)malloc(sizeof(t_list))))
+	if (!(new = (void*)malloc(size)))
+	{
+		errno = ENOMEM;
 		return (NULL);
-	if (content)
-	{
-		link->content = ft_memdup(content, content_size);
-		link->content_size = content_size;
 	}
-	else
+	i = 0;
+	while (i < size)
 	{
-		link->content = NULL;
-		link->content_size = 0;
+		((unsigned char *)new)[i] = ((unsigned char *)mem)[i];
+		i++;
 	}
-	link->next = NULL;
-	return (link);
+	return (new);
 }
