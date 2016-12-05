@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strplace.c                                      :+:      :+:    :+:   */
+/*   ft_lstprint.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mburson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/02 19:23:39 by mburson           #+#    #+#             */
-/*   Updated: 2016/12/02 19:23:41 by mburson          ###   ########.fr       */
+/*   Created: 2016/12/04 16:05:24 by mburson           #+#    #+#             */
+/*   Updated: 2016/12/04 16:05:26 by mburson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <libft.h>
 
-/*
-** copies the src string to the dst
-** returns the last character in the dst that was copied
-*/
-
-char	*ft_strplace(char *restrict dst, const char *restrict src)
+void	ft_lstprint(t_list *link)
 {
-	size_t i;
-
-	i = 0;
-	while (src[i])
+	if (!link)
 	{
-		(dst)[i] = (src)[i];
-		i++;
+		ft_putstr("(null list)\n");
+		return ;
 	}
-	return (&(dst[i - 1]));
+	while (link)
+	{
+		ft_putchar('[');
+		ft_putstr(link->content);
+		ft_putchar(']');
+		link = link->next;
+		if (link)
+		{
+			ft_putstr(" -> ");
+		}
+	}
+	ft_putchar('\n');
 }

@@ -23,6 +23,6 @@ char			*ft_strjoin(char const *s1, char const *s2)
 	if (!(new = (char*)malloc(sizeof(char) * (l + 1))))
 		return (NULL);
 	new[l] = '\0';
-	strplace(strplace(new, s1) + 1, s2);
+	ft_strplace(ft_strplace(new, s1) + 1, s2);
 	return (new);
 }
