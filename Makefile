@@ -86,7 +86,7 @@ NEEDLIB = ft_strdup.o\
 	ft_lstiter.o\
 	ft_lstmap.o
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 
 all: $(NAME)
 
