@@ -24,7 +24,7 @@ typedef struct		s_list
 
 char				*ft_strplace(char *restrict dst, const char *restrict src);
 int					ft_numlen(long n, long base);
-void 				ft_lstprint(t_list *link);
+void				ft_lstprint(t_list *link);
 
 void				*ft_memset(void *b, int c, size_t len);
 void				*ft_bzero(void *s, size_t len);
@@ -87,5 +87,7 @@ void				ft_putnbr_fd(int n, int fd);
 
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
+void				ft_lstdel(t_list **alist, void (*del)(void *, size_t));
+void				ft_lstadd(t_list **alst, t_list *new);
 
 #endif

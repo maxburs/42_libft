@@ -1,30 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mburson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/04 16:16:20 by mburson           #+#    #+#             */
-/*   Updated: 2016/12/04 16:16:23 by mburson          ###   ########.fr       */
+/*   Created: 2016/12/04 17:34:41 by mburson           #+#    #+#             */
+/*   Updated: 2016/12/04 17:34:43 by mburson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include <libft.h>
-#include <string.h>
 
-t_list	*ft_lstnew(void const *content, size_t content_size)
+void	ft_lstadd(t_list **alst, t_list *new)
 {
-	t_list	*link;
-
-	if (!(link = (t_list*)malloc(sizeof(t_list))))
-		return (NULL);
-	link->content = (void*)content;
-	if (link->content)
-		link->content_size = content_size;
-	else
-		link->content_size = 0;
-	link->next = NULL;
-	return (link);
+	new->next = *alst;
+	*alst = new;
 }
