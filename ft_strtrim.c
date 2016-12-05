@@ -36,7 +36,7 @@ char			*ft_strtrim(char const *s)
 		return (ft_strdup("\0"));
 	if (!(new = (char*)malloc(end - start + 2)))
 		return (NULL);
-	new[end - start + 2] = '\0';
 	ft_strncpy(new, &(s[start]), end - start + 1);
+	new[end - start + 1] = '\0';
 	return (new);
 }
