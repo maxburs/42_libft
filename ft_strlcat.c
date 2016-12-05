@@ -29,9 +29,6 @@ size_t	ft_strlcat(char *restrict s1, const char *restrict s2, size_t size)
 		i++;
 		j++;
 	}
-	if (i < size)
-		s1[i] = '\0';
-	else
-		s1[size - 1] = '\0';
+	s1[i] = '\0';
 	return (i);
 }
