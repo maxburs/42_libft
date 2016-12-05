@@ -17,18 +17,24 @@ size_t	ft_strlcat(char *restrict s1, const char *restrict s2, size_t size)
 {
 	size_t	i;
 	size_t	j;
+	size_t	k;
 
 	i = 0;
-	while (s1[i])
+	while (s1[i] && i < size)
 		i++;
 	j = 0;
+	k = i;
 	while (s2[j])
 	{
 		if (i < size - 1)
+		{
 			s1[i] = s2[j];
-		i++;
+			i++;
+		}
 		j++;
+		k++;
 	}
-	s1[i] = '\0';
-	return (i);
+	if (i < size && j)
+		s1[i] = '\0';
+	return (k);
 }
