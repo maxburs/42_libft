@@ -17,7 +17,7 @@
 ** returns the last character in the dst that was copied
 */
 
-char	*ft_strplace(char *restrict dst, const char *restrict src)
+char	*ft_strplace(char *dst, const char *src)
 {
 	size_t i;
 
