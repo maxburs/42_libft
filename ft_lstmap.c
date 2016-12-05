@@ -13,7 +13,8 @@
 #include <libft.h>
 #include <string.h>
 
-static	void recurse_me(t_list *lst, t_list *(*f)(t_list *elem), t_list **new)
+static	void	recurse_me(t_list *lst,\
+					t_list *(*f)(t_list *elem), t_list **new)
 {
 	if (lst)
 	{
@@ -24,7 +25,7 @@ static	void recurse_me(t_list *lst, t_list *(*f)(t_list *elem), t_list **new)
 		*new = NULL;
 }
 
-t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
 	t_list *new;
 
