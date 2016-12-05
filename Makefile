@@ -58,10 +58,12 @@ OBJS = \
 	ft_putstr_fd.o\
 	ft_putendl_fd.o\
 	ft_putnbr_fd.o\
+	\
 	ft_lstnew.o\
 	ft_lstdelone.o\
 	ft_lstdel.o\
-	ft_lstadd.o
+	ft_lstadd.o\
+	ft_lstiter.o
 
 NEEDLIB = ft_strdup.o\
 	ft_strnew.o\
@@ -78,7 +80,8 @@ NEEDLIB = ft_strdup.o\
 	ft_lstnew.o\
 	ft_lstdelone.o\
 	ft_lstdel.o\
-	ft_lstadd.o
+	ft_lstadd.o\
+	ft_lstiter.o
 
 CFLAGS = -Wall -Wextra -Werror -g
 
