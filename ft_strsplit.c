@@ -14,25 +14,6 @@
 #include <libft.h>
 #include <stdlib.h>
 
-static size_t	word_count(const char *str, char split)
-{
-	size_t	count;
-	size_t	i;
-
-	count = 0;
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] == split && str[i + 1] != split && str[i + 1])
-		{
-			count++;
-			i++;
-		}
-		i++;
-	}
-	return (count);
-}
-
 static size_t	plength(const char *str, char split)
 {
 	size_t	len;
@@ -50,7 +31,7 @@ char			**ft_strsplit(char const *s, char c)
 	size_t	j;
 	size_t	len;
 
-	if (!(new = (char**)malloc(sizeof(char*) * (word_count(s, c) + 1))))
+	if (!(new = (char**)malloc(sizeof(char*) * (ft_wrdcnt(s, c) + 1))))
 		return (NULL);
 	i = 0;
 	j = 0;

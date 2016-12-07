@@ -5,6 +5,7 @@ OBJS = \
 	ft_numlen.o\
 	ft_lstprint.o\
 	ft_memdup.o\
+	ft_wrdcnt.o\
 	\
 	ft_memset.o\
 	ft_bzero.o\
