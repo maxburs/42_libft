@@ -16,13 +16,13 @@
 ** looks though n characters for char c in str s
 */
 
-char	*ft_stnrchr(const char *s, int c, size_t n)
+char	*ft_strnchr(const char *s, int c, size_t n)
 {
 	size_t	i;
 
 	i = 0;
-	while (i < n && *s != (char)c)
-		s++;
+	while (i < n && s[i] != (char)c)
+		i++;
 	if (s[i] == (char)c)
 		return ((char*)&(s[i]));
 	return (NULL);
