@@ -6,7 +6,7 @@
 /*   By: mburson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/28 10:04:47 by mburson           #+#    #+#             */
-/*   Updated: 2016/11/28 10:04:50 by mburson          ###   ########.fr       */
+/*   Updated: 2016/12/15 17:06:35 by mburson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,9 @@ int					ft_numlen(long n, long base);
 void				ft_lstprint(t_list *link);
 void				*ft_memdup(const void *item, size_t size);
 size_t				ft_wrdcnt(const char *str, char split);
+
+char				*ft_strndup(char *str, size_t n);
+char				*ft_strnchr(const char *s, int c, size_t n);
 
 void				*ft_memset(void *b, int c, size_t len);
 void				*ft_bzero(void *s, size_t len);

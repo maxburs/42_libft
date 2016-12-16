@@ -7,6 +7,9 @@ OBJS = \
 	ft_memdup.o\
 	ft_wrdcnt.o\
 	\
+	ft_strndup.o\
+	ft_strnchr.o\
+	\
 	ft_memset.o\
 	ft_bzero.o\
 	ft_memcpy.o\
