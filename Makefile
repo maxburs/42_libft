@@ -9,6 +9,7 @@ OBJS = \
 	\
 	ft_strndup.o\
 	ft_strnchr.o\
+	ft_strpinch.o\
 	\
 	ft_memset.o\
 	ft_bzero.o\
