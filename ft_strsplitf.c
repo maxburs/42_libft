@@ -13,13 +13,13 @@
 #include <libft.h>
 #include <stdlib.h>
 
-char		*ft_strpinch(char **str, char *split)
+char		*ft_strsplitf(char **str, char *split)
 {
 	char	*left;
 	char	*right;
 
 	left = ft_strndup(*str, split - *str);
-	right = ft_strdup(split);
+	right = ft_strdup(split + sizeof(char));
 	free(*str);
 	*str = right;
 	return (left);

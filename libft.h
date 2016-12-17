@@ -30,7 +30,7 @@ size_t				ft_wrdcnt(const char *str, char split);
 
 char				*ft_strndup(char *str, size_t n);
 char				*ft_strnchr(const char *s, int c, size_t n);
-char				*ft_strpinch(char **str, char *split);
+char				*ft_strsplitf(char **str, char *split);
 
 void				*ft_memset(void *b, int c, size_t len);
 void				*ft_bzero(void *s, size_t len);
