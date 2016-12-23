@@ -97,7 +97,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	ar rc $@ $^
-#	ranlib $@
+	ranlib $@
 
 %.o: %.c
 	gcc $(CFLAGS) -I . -c -o $@ $<
@@ -109,3 +109,5 @@ clean:
 fclean: clean
 	rm -f $(NAME)
 re: fclean all
+
+.PHONY: all clean fclean
