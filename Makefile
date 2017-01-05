@@ -6,6 +6,7 @@ OBJS = \
 	ft_lstprint.o\
 	ft_memdup.o\
 	ft_wrdcnt.o\
+	ft_strchri.o\
 	\
 	ft_strndup.o\
 	ft_strnchr.o\

@@ -27,6 +27,7 @@ int					ft_numlen(long n, long base);
 void				ft_lstprint(t_list *link);
 void				*ft_memdup(const void *item, size_t size);
 size_t				ft_wrdcnt(const char *str, char split);
+int					ft_strchri(const char *str, char c);
 
 char				*ft_strndup(char *str, size_t n);
 char				*ft_strnchr(const char *s, int c, size_t n);
