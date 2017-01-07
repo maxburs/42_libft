@@ -12,6 +12,10 @@
 
 #include <string.h>
 
+/*
+** sets all characters in a string to zero
+*/
+
 void	*ft_bzero(void *b, size_t len)
 {
 	size_t			i;

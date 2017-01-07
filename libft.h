@@ -22,6 +22,11 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+/*
+** ./string/
+*/
+void				*ft_bzero(void *s, size_t len);
+
 char				*ft_strplace(char *dst, const char *src);
 int					ft_numlen(long n, long base);
 void				ft_lstprint(t_list *link);
@@ -34,7 +39,6 @@ char				*ft_strnchr(const char *s, int c, size_t n);
 char				*ft_strsplitf(char **str, char *split);
 
 void				*ft_memset(void *b, int c, size_t len);
-void				*ft_bzero(void *s, size_t len);
 void				*ft_memcpy(void *dst, const void *src,\
 						size_t n);
 void				*ft_memccpy(void *dst, const void *src,\

@@ -12,6 +12,10 @@
 
 #include <string.h>
 
+/*
+** converts a string to an int
+*/
+
 int	ft_atoi(const char *str)
 {
 	long		result;
