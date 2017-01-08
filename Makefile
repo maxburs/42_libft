@@ -96,7 +96,6 @@ DEBUG = -g
 
 all: $(NAME)
 
-debug: $(eval CFLAGS += $(DEBUG))
 
 $(NAME): $(OBJS)
 	ar rc $@ $^
@@ -104,6 +103,9 @@ $(NAME): $(OBJS)
 
 %.o: %.c
 	gcc $(CFLAGS) -I . -c -o $@ $<
+
+debug: CFLAGS += $(DEBUG)
+debug: all
 
 clean:
 	rm -f $(OBJS)
