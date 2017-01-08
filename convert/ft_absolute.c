@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_intlen.c                                        :+:      :+:    :+:   */
+/*   ft_absolute.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mburson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/03 13:42:31 by mburson           #+#    #+#             */
-/*   Updated: 2016/12/03 13:42:33 by mburson          ###   ########.fr       */
+/*   Created: 2017/01/07 20:27:27 by mburson           #+#    #+#             */
+/*   Updated: 2017/01/07 20:27:29 by mburson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_numlen(long long n, long long base)
-{
-	int		size;
+#include <limits.h>
 
-	if (n == 0)
-		return (1);
-	size = 0;
+unsigned long long int	ft_absolute(long long int n)
+{
 	if (n < 0)
-		size++;
-	while (n != 0)
-	{
-		size++;
-		n /= base;
-	}
-	return (size);
+		n = 0 - (n ^ 0x8000000000000000) - (LLONG_MIN);
+	return ((unsigned long long int)n);
 }

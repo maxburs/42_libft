@@ -8,8 +8,10 @@ OBJS_BOOL = \
 	ft_isprint.o \
 
 OBJS_CONVERT = \
+	ft_absolute.o \
 	ft_atoi.o \
 	ft_itoa.o \
+	ft_itoa_base.o \
 	ft_tolower.o \
 	ft_toupper.o \
 
@@ -35,6 +37,7 @@ OBJS_MEMORY = \
 
 OBJS_OTHER = \
 	ft_numlen.o \
+	ft_numlen_un.o \
 
 OBJS_PUT = \
 	ft_putchar.o \

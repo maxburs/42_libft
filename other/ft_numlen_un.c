@@ -10,15 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_numlen(long long n, long long base)
+/*
+** finds the length needed to represent and undefined number
+**		in the given base
+*/
+
+int		ft_numlen_un(unsigned long long n, unsigned long long base)
 {
 	int		size;
 
 	if (n == 0)
 		return (1);
 	size = 0;
-	if (n < 0)
-		size++;
 	while (n != 0)
 	{
 		size++;
