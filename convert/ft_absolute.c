@@ -11,10 +11,9 @@
 /* ************************************************************************** */
 
 #include <limits.h>
+#include <stdint.h>
 
-unsigned long long int	ft_absolute(long long int n)
+uintmax_t	ft_absolute(intmax_t n)
 {
-	if (n < 0)
-		n = 0 - (n ^ 0x8000000000000000) - (LLONG_MIN);
-	return ((unsigned long long int)n);
+	return (n < 0 ? -n : n);
 }

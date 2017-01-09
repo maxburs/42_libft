@@ -10,12 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdint.h>
+
 /*
 ** finds the length needed to represent and undefined number
 **		in the given base
 */
 
-int		ft_numlen_un(unsigned long long n, unsigned long long base)
+int		ft_numlen_un(uintmax_t n, uintmax_t base)
 {
 	int		size;
 

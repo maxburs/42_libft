@@ -13,6 +13,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <libft.h>
+#include <stdint.h>
 
 /*
 **	converts a number into a representation in the given base
@@ -28,8 +29,7 @@ static char		rep_mask(int num, _Bool uppercase)
 		return (num - 10 + 'a');
 }
 
-char			*ft_itoa_base(unsigned long long int n, \
-					unsigned long long int base, _Bool uppercase)
+char			*ft_itoa_base(uintmax_t n, uintmax_t base, _Bool uppercase)
 {
 	char	*str;
 	int		i;

@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <string.h>
+# include <stdint.h>
 
 typedef struct			s_list
 {
@@ -30,17 +31,17 @@ void					*ft_bzero(void *s, size_t len);
 /*
 ** ./convert/
 */
-unsigned long long int	ft_absolute(long long int n);
+uintmax_t				ft_absolute(intmax_t n);
 int						ft_atoi(const char *str);
-char					*ft_itoa_base(unsigned long long int n, \
-						unsigned long long int base, _Bool uppercase);
+char					*ft_itoa_base(uintmax_t n, uintmax_t base, \
+							_Bool uppercase);
 char					*ft_itoa(int n);
 
 /*
 ** ./other/
 */
 int						ft_numlen(long n, long base);
-int						ft_numlen_un(unsigned long long n, unsigned long long base);
+int						ft_numlen_un(uintmax_t n, uintmax_t base);
 
 char					*ft_strplace(char *dst, const char *src);
 void					ft_lstprint(t_list *link);
@@ -95,7 +96,8 @@ char					*ft_strmap(char *s, char (*f)(char));
 char					*ft_strmapi(char *s, char (*f)(unsigned int, char));
 int						ft_strequ(char const *s1, char const *s2);
 int						ft_strnequ(char const *s1, char const *s2, size_t n);
-char					*ft_strsub(char const *s, unsigned int start, size_t len);
+char					*ft_strsub(char const *s, \
+							unsigned int start, size_t len);
 char					*ft_strjoin(char const *s1, char const *s2);
 char					*ft_strtrim(char const *s);
 char					**ft_strsplit(char const *s, char c);
