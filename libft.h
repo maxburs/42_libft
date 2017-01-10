@@ -24,11 +24,6 @@ typedef struct			s_list
 }						t_list;
 
 /*
-** ./string/
-*/
-void					*ft_bzero(void *s, size_t len);
-
-/*
 ** ./convert/
 */
 uintmax_t				ft_absolute(intmax_t n);
@@ -36,6 +31,23 @@ int						ft_atoi(const char *str);
 char					*ft_itoa_base(uintmax_t n, uintmax_t base, \
 							_Bool uppercase);
 char					*ft_itoa(int n);
+
+/*
+** ./string/
+*/
+void					*ft_bzero(void *s, size_t len);
+
+/*
+** ./put/
+*/
+void					ft_putchar(char c);
+void					ft_putstr(char const *s);
+void					ft_putendl(char const *s);
+void					ft_putnbr(int n);
+void					ft_putchar_fd(char c, int fd);
+void					ft_putstr_fd(char const *s, int fd);
+void					ft_putendl_fd(char const *s, int fd);
+void					ft_putnbr_fd(int n, int fd);
 
 /*
 ** ./other/
@@ -101,14 +113,6 @@ char					*ft_strsub(char const *s, \
 char					*ft_strjoin(char const *s1, char const *s2);
 char					*ft_strtrim(char const *s);
 char					**ft_strsplit(char const *s, char c);
-void					ft_putchar(char c);
-void					ft_putstr(char const *s);
-void					ft_putendl(char const *s);
-void					ft_putnbr(int n);
-void					ft_putchar_fd(char c, int fd);
-void					ft_putstr_fd(char const *s, int fd);
-void					ft_putendl_fd(char const *s, int fd);
-void					ft_putnbr_fd(int n, int fd);
 
 t_list					*ft_lstnew(void const *content, size_t content_size);
 void					ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
