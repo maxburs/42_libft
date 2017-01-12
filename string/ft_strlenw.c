@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strlenw.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mburson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/03 17:12:28 by mburson           #+#    #+#             */
-/*   Updated: 2016/12/03 17:12:29 by mburson          ###   ########.fr       */
+/*   Created: 2017/01/11 22:33:35 by mburson           #+#    #+#             */
+/*   Updated: 2017/01/11 22:33:37 by mburson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <wchar.h>
 #include <string.h>
-#include <unistd.h>
 
-void	ft_putendl_fd(const char *s, int fd)
+/*
+** finds the number of characters in a wide character string
+*/
+
+size_t		ft_strlenw(const wchar_t *str)
 {
-	size_t len;
+	size_t	length;
 
-	len = ft_strlen(s);
-	write(fd, (const void *)s, len);
-	ft_putchar_fd('\n', fd);
+	length = 0;
+	while (*str)
+	{
+		str++;
+		length++;
+	}
+	return (length);
 }

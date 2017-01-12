@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_wputstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mburson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/03 17:12:28 by mburson           #+#    #+#             */
-/*   Updated: 2016/12/03 17:12:29 by mburson          ###   ########.fr       */
+/*   Created: 2017/01/11 22:18:43 by mburson           #+#    #+#             */
+/*   Updated: 2017/01/11 22:18:44 by mburson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
-#include <string.h>
+#include <wchar.h>
 #include <unistd.h>
+#include <string.h>
+#include <libft.h>
 
-void	ft_putendl_fd(const char *s, int fd)
+/*
+** writes a string of wide characters to the standard output
+*/
+
+void	ft_putstrw(const wchar_t *str)
 {
-	size_t len;
-
-	len = ft_strlen(s);
-	write(fd, (const void *)s, len);
-	ft_putchar_fd('\n', fd);
+	write(1, str, sizeof(wchar_t) * ft_strlenw(str));
 }

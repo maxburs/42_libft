@@ -48,6 +48,7 @@ OBJS_PUT = \
 	ft_putnbr_fd.o \
 	ft_putstr.o \
 	ft_putstr_fd.o \
+	ft_putstrw.o \
 
 OBJS_STRING = \
 	ft_bzero.o \
@@ -65,6 +66,7 @@ OBJS_STRING = \
 	ft_strjoin.o \
 	ft_strlcat.o \
 	ft_strlen.o \
+	ft_strlenw.o \
 	ft_strmap.o \
 	ft_strmapi.o \
 	ft_strncat.o \

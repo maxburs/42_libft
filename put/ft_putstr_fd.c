@@ -14,7 +14,7 @@
 #include <string.h>
 #include <unistd.h>
 
-void	ft_putstr_fd(char const *s, int fd)
+void	ft_putstr_fd(const char *s, int fd)
 {
 	size_t len;
 

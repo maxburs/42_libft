@@ -12,15 +12,9 @@
 
 #include <libft.h>
 #include <string.h>
+#include <unistd.h>
 
-void	ft_putstr(char const *s)
+void	ft_putstr(const char *s)
 {
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-	{
-		ft_putchar(s[i]);
-		i++;
-	}
+	write(1, s, sizeof(char) * ft_strlen(s));
 }
