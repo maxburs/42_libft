@@ -25,8 +25,11 @@ OBJS_LIST =  \
 	ft_lstprint.o \
 
 OBJS_LISTM = \
+	ft_lstmadd_b.o \
 	ft_lstmnew.o \
-	ft_lstmprint.o \
+	ft_lstr_add.o \
+	ft_lstr_finish.o \
+	ft_lstr_print.o \
 
 OBJS_MEMORY = \
 	ft_memalloc.o \
