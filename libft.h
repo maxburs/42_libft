@@ -24,6 +24,12 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+typedef struct		s_listm
+{
+	void			*content;
+	struct s_listm	*next;
+}					t_listm;
+
 /*
 ** ./bool/
 */
@@ -54,6 +60,14 @@ void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstprint(t_list *link);
+
+/*
+** ./listm/
+*/
+char				*ft_lstm_strfinish(t_listm **start);
+void				ft_lstmadd(t_listm **start, void *content);
+t_listm				*ft_lstmnew(void *content);
+void				ft_lstmprint(t_listm *link);
 
 /*
 ** ./memory/

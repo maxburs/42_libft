@@ -24,6 +24,10 @@ OBJS_LIST =  \
 	ft_lstnew.o \
 	ft_lstprint.o \
 
+OBJS_LISTM = \
+	ft_lstmnew.o \
+	ft_lstmprint.o \
+
 OBJS_MEMORY = \
 	ft_memalloc.o \
 	ft_memccpy.o \
@@ -90,12 +94,18 @@ OBJS = \
 	$(addprefix ./bool/,$(OBJS_BOOL)) \
 	$(addprefix ./convert/,$(OBJS_CONVERT)) \
 	$(addprefix ./list/,$(OBJS_LIST)) \
+	$(addprefix ./listm/,$(OBJS_LISTM)) \
 	$(addprefix ./memory/,$(OBJS_MEMORY)) \
 	$(addprefix ./other/,$(OBJS_OTHER)) \
 	$(addprefix ./put/,$(OBJS_PUT)) \
 	$(addprefix ./string/,$(OBJS_STRING)) \
 
 CFLAGS = -Wall -Wextra -Werror
+
+
+ifdef DEBUG
+CFLAGS += -g
+endif
 
 DEBUG = -g
 
@@ -108,9 +118,6 @@ $(NAME): $(OBJS)
 
 %.o: %.c
 	gcc $(CFLAGS) -I . -c -o $@ $<
-
-debug: CFLAGS += $(DEBUG)
-debug: all
 
 clean:
 	rm -f $(OBJS)
