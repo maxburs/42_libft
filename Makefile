@@ -107,14 +107,13 @@ OBJS = \
 	$(addprefix ./put/,$(OBJS_PUT)) \
 	$(addprefix ./string/,$(OBJS_STRING)) \
 
-CFLAGS = -Wall -Wextra -Werror
-
-
-ifdef DEBUG
-CFLAGS += -g
+CFLAGS = -Wall -Wextra
+ifndef WNOERROR
+	CFLAGS += -Werror
 endif
-
-DEBUG = -g
+ifdef DEBUG
+	CFLAGS += -g
+endif
 
 all: $(NAME)
 
