@@ -27,8 +27,11 @@ OBJS_LIST =  \
 OBJS_LISTM = \
 	ft_lstmadd_b.o \
 	ft_lstmnew.o \
+
+OBJS_LSTR = \
 	ft_lstr_add.o \
 	ft_lstr_finish.o \
+	ft_lstr_new.o \
 	ft_lstr_print.o \
 
 OBJS_MEMORY = \
@@ -98,6 +101,7 @@ OBJS = \
 	$(addprefix ./convert/,$(OBJS_CONVERT)) \
 	$(addprefix ./list/,$(OBJS_LIST)) \
 	$(addprefix ./listm/,$(OBJS_LISTM)) \
+	$(addprefix ./lstr/,$(OBJS_LSTR)) \
 	$(addprefix ./memory/,$(OBJS_MEMORY)) \
 	$(addprefix ./other/,$(OBJS_OTHER)) \
 	$(addprefix ./put/,$(OBJS_PUT)) \

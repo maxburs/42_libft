@@ -33,11 +33,12 @@ typedef struct		s_listm
 /*
 ** for ft_lstr_add and ft_lstr_finish
 */
-typedef struct		s_sstr
+typedef struct		s_lstr
 {
 	char			*str;
 	_Bool			constant;
-}					t_sstr;
+	struct s_lstr	*next;
+}					t_lstr;
 
 /*
 ** ./bool/
@@ -75,9 +76,14 @@ void				ft_lstprint(t_list *link);
 */
 void				ft_lstmadd_b(t_listm **start, void *content);
 t_listm				*ft_lstmnew(void *content);
-void				ft_lstr_add(t_listm **start, char *str, _Bool constant);
-char				*ft_lstr_finish(t_listm **start);
-void				ft_lstr_print(t_listm *link);
+
+/*
+** ./lstr/
+*/
+_Bool				ft_lstr_add(t_lstr **start, char *str, _Bool constant);
+char				*ft_lstr_finish(t_lstr **start);
+t_lstr				*ft_lstr_new(char *str, _Bool constant);
+void				ft_lstr_print(t_lstr *link);
 
 /*
 ** ./memory/

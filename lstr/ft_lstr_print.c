@@ -1,25 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstr_add.c                                      :+:      :+:    :+:   */
+/*   ft_lstprint.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mburson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/13 01:50:17 by mburson           #+#    #+#             */
-/*   Updated: 2017/01/13 01:50:18 by mburson          ###   ########.fr       */
+/*   Created: 2016/12/04 16:05:24 by mburson           #+#    #+#             */
+/*   Updated: 2016/12/04 16:05:26 by mburson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
-#include <stdlib.h>
 
-void		ft_lstr_add(t_listm **start, char *str, _Bool constant)
+void	ft_lstr_print(t_lstr *link)
 {
-	t_sstr	*s;
-
-	if (!(s = (t_sstr*)malloc(sizeof(t_sstr))))
+	if (!link)
+	{
+		ft_putstr("(null list)\n");
 		return ;
-	s->str = str;
-	s->constant = constant;
-	ft_lstmadd_b(start, s);
+	}
+	while (link)
+	{
+		ft_putchar('[');
+		if (link->str)
+			ft_putstr(link->str);
+		else
+			ft_putstr("NULL");
+		ft_putstr("]");
+		if (link->constant)
+			ft_putstr(" (c)");
+		else
+			ft_putstr(" (m)");
+		link = link->next;
+		if (link)
+		{
+			ft_putstr(" -> ");
+		}
+	}
+	ft_putchar('\n');
 }

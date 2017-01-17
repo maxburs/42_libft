@@ -6,7 +6,7 @@
 /*   By: mburson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/12 22:11:38 by mburson           #+#    #+#             */
-/*   Updated: 2017/01/13 01:50:27 by mburson          ###   ########.fr       */
+/*   Updated: 2017/01/16 20:23:04 by mburson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,23 @@
 #include <libft.h>
 #include <stdlib.h>
 
-static size_t total_length(t_listm *link)
+static size_t	total_length(t_lstr *link)
 {
 	size_t	size;
 
 	size = 0;
 	while (link)
 	{
-		size += ft_strlen(((t_sstr*)link->content)->str);
+		size += ft_strlen(link->str);
 		link = link->next;
 	}
 	return (size);
 }
 
-char				*ft_lstr_finish(t_listm **start)
+char			*ft_lstr_finish(t_lstr **start)
 {
-	t_listm		*link;
-	t_listm		*swap;
+	t_lstr		*link;
+	t_lstr		*link_last;
 	char		*str;
 	char		*cur;
 
@@ -43,14 +43,13 @@ char				*ft_lstr_finish(t_listm **start)
 	*start = NULL;
 	while (link)
 	{
-		cur = ft_strplace(cur, ((t_sstr*)link->content)->str);
+		cur = ft_strplace(cur, (link->str));
 		cur++;
-		if (!((t_sstr*)link->content)->constant)
-			free (((t_sstr*)link->content)->str);
-		free(link->content);
-		swap = link;
+		if (!(link->constant))
+			free(link->str);
+		link_last = link;
 		link = link->next;
-		free(swap);
+		free(link_last);
 	}
 	*cur = '\0';
 	return (str);

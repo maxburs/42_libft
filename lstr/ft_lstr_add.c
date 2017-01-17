@@ -1,41 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstprint.c                                      :+:      :+:    :+:   */
+/*   ft_lstr_add.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mburson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/04 16:05:24 by mburson           #+#    #+#             */
-/*   Updated: 2016/12/04 16:05:26 by mburson          ###   ########.fr       */
+/*   Created: 2017/01/13 01:50:17 by mburson           #+#    #+#             */
+/*   Updated: 2017/01/13 01:50:18 by mburson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
+#include <stdlib.h>
+#include <stdbool.h>
 
-void	ft_lstr_print(t_listm *link)
+_Bool		ft_lstr_add(t_lstr **start, char *str, _Bool constant)
 {
-	if (!link)
+	t_lstr	*link;
+
+	if (!*start)
 	{
-		ft_putstr("(null list)\n");
-		return ;
+		if (!(*start = ft_lstr_new(str, constant)))
+			return (false);
+		return (true);
 	}
-	while (link)
-	{
-		ft_putchar('[');
-		if (((t_sstr*)link->content)->str)
-			ft_putstr(((t_sstr*)link->content)->str);
-		else
-			ft_putstr("NULL");
-		ft_putstr("]");
-		if (((t_sstr*)link->content)->constant)
-			ft_putstr(" (c)");
-		else
-			ft_putstr(" (m)");
+	link = (*start);
+	while (link->next)
 		link = link->next;
-		if (link)
-		{
-			ft_putstr(" -> ");
-		}
-	}
-	ft_putchar('\n');
+	if (!(link->next = ft_lstr_new(str, constant)))
+		return (false);
+	return (true);
 }
