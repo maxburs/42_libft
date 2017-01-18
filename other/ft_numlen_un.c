@@ -21,8 +21,6 @@ int		ft_numlen_un(uintmax_t n, uintmax_t base)
 {
 	int		size;
 
-	if (n == 0)
-		return (1);
 	size = 0;
 	while (n != 0)
 	{

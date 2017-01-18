@@ -34,8 +34,6 @@ char			*ft_itoa_base(uintmax_t n, uintmax_t base, _Bool uppercase)
 	char	*str;
 	int		i;
 
-	if (n == 0)
-		return (ft_strdup("0"));
 	i = ft_numlen_un(n, base);
 	if (!(str = (char*)malloc(sizeof(char) * (i + 1))))
 		return (NULL);
