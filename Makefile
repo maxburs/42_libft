@@ -117,7 +117,6 @@ endif
 
 all: $(NAME)
 
-
 $(NAME): $(OBJS)
 	ar rc $@ $^
 	ranlib $@
