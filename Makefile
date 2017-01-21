@@ -14,6 +14,7 @@ OBJS_CONVERT = \
 	ft_itoa_base.o \
 	ft_tolower.o \
 	ft_toupper.o \
+	ft_utf_16_32.o \
 	ft_utf_32_8.o \
 
 OBJS_LIST =  \

@@ -13,7 +13,13 @@
 #include <wchar.h>
 #include <libft.h>
 
-wint_t    *ft_utf_16_32(wchar_t *c)
+wint_t    ft_utf_16_32(wchar_t **c)
 {
-    
+	wint_t	res;
+	if (!(**c & (0b1 << 15)))
+		return ((wint_t)**c);
+	res = (wint_t)(**c & 0x3FF) << 9;
+	(*c)++;
+	res = res | (wint_t)(**c & 0x1FF);
+	return (res);
 }
