@@ -13,13 +13,18 @@
 #include <wchar.h>
 #include <libft.h>
 
+#include <stdio.h>
+
 wint_t    ft_utf_16_32(wchar_t **c)
 {
 	wint_t	res;
+	printf("status: %d\n", !(**c & (0b1 << 15)));
 	if (!(**c & (0b1 << 15)))
 		return ((wint_t)**c);
-	res = (wint_t)(**c & 0x3FF) << 9;
+	printf("working!!\n");
+	res = (wint_t)(**c & 0x7FF) << 10;
+	printf("status: %x\n", res);
 	(*c)++;
-	res = res | (wint_t)(**c & 0x1FF);
+	res = res | (wint_t)(**c & 0x3FF);
 	return (res);
 }
