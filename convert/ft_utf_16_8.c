@@ -13,7 +13,7 @@
 #include <wchar.h>
 #include <libft.h>
 
-char    *ft_utf_16_8(wchar_t *c)
+unsigned char    *ft_utf_16_8(wchar_t **c)
 {
     return (ft_utf_32_8(ft_utf_16_32(c)));
 }

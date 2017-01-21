@@ -15,6 +15,7 @@ OBJS_CONVERT = \
 	ft_tolower.o \
 	ft_toupper.o \
 	ft_utf_16_32.o \
+	ft_utf_16_8.o \
 	ft_utf_32_8.o \
 
 OBJS_LIST =  \

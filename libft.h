@@ -60,6 +60,7 @@ char				*ft_itoa_base(uintmax_t n, uintmax_t base, \
 int					ft_tolower(int c);
 int					ft_toupper(int c);
 wint_t    			ft_utf_16_32(wchar_t **c);
+unsigned char    	*ft_utf_16_8(wchar_t **c);
 unsigned char    	*ft_utf_32_8(wint_t c);
 
 /*
