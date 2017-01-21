@@ -15,6 +15,8 @@
 #include <string.h>
 #include <stdlib.h>
 
+#include <stdio.h>
+
 static unsigned char     format_trailing(unsigned char c)
 {
     return ((c & 0b00111111) | 0b10000000);
@@ -45,6 +47,7 @@ unsigned char    *ft_utf_32_8(wint_t c)
 
     if (!(len = get_length(c)))
         return (NULL);
+    printf("length: %d\n", len);
     if (!(res = (unsigned char*)malloc(sizeof(char) * (len + 1))))
         return (NULL);
     res[len] = '\0';
