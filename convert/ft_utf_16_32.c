@@ -18,13 +18,15 @@
 wint_t    ft_utf_16_32(wchar_t **c)
 {
 	wint_t	res;
-	printf("status: %d\n", !(**c & (0b1 << 15)));
 	if (!(**c & (0b1 << 15)))
-		return ((wint_t)**c);
-	printf("working!!\n");
+	{
+		res = (wint_t)**c;
+		(*c)++;
+		return (res);
+	}
 	res = (wint_t)(**c & 0x7FF) << 10;
-	printf("status: %x\n", res);
 	(*c)++;
-	res = res | (wint_t)(**c & 0x3FF);
+	res = res | (wint_t)(**c & 0x3FF) | (1 << 16);
+	(*c)++;
 	return (res);
 }
