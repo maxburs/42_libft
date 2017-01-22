@@ -15,7 +15,7 @@
 #include <string.h>
 #include <errno.h>
 
-char	*ft_strdup(char *str)
+char	*ft_strdup(const char *str)
 {
 	char	*new_str;
 	int		i;

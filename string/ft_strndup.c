@@ -18,7 +18,7 @@
 ** creates a new string from char *str of n length and null terminates it
 */
 
-char				*ft_strndup(char *str, size_t n)
+char				*ft_strndup(const char *str, size_t n)
 {
 	char	*new_str;
 
