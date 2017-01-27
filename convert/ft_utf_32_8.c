@@ -17,57 +17,54 @@
 
 #include <stdio.h>
 
-static unsigned char     format_trailing(unsigned char c)
+static unsigned char	format_trailing(unsigned char c)
 {
-    return ((c & 0b00111111) | 0b10000000);
+	return ((c & 0b00111111) | 0b10000000);
 }
 
-static unsigned char     format_first(unsigned char c, int length)
+static unsigned char	format_first(unsigned char c, int length)
 {
-    return ((0b11110000 << (4 - length)) | c);
+	return ((0b11110000 << (4 - length)) | c);
 }
 
-static char                get_length(wint_t c)
+static char				get_length(wint_t c)
 {
-    if (!((0xFFFFFFFF << 7) & c))
-        return (1);
-    if (!((0xFFFFFFFF << 11) & c))
-        return (2);
-    if (!((0xFFFFFFFF << 16) & c))
-        return (3);
-    if (!((0xFFFFFFFF << 21) & c))
-        return (4);
-    return (0);
+	if (!((0xFFFFFFFF << 7) & c))
+		return (1);
+	if (!((0xFFFFFFFF << 11) & c))
+		return (2);
+	if (!((0xFFFFFFFF << 16) & c))
+		return (3);
+	if (!((0xFFFFFFFF << 21) & c))
+		return (4);
+	return (0);
 }
 
-unsigned char				*ft_utf_32_8(wint_t c)
+unsigned char			*ft_utf_32_8(wint_t c)
 {
-    unsigned char   *res;
-    int             len;
-    int             i;
+	unsigned char	*res;
+	int				len;
+	int				i;
 
-    if (!(len = get_length(c)))
-        return (NULL);
-    if (!(res = (unsigned char*)malloc(sizeof(char) * (len + 1))))
-        return (NULL);
-    res[len] = '\0';
-    if (len == 1)
-    {
-        res[0] = (unsigned char)c;
-        return (res);
-    }
-    i = len;
-    while (i)
-    {
-        i--;
-        res[i] = (unsigned char)c;
-        if (i)
-        {
-            res[i] = format_trailing(res[i]);
-            c = c >> 6;
-        }
-        else
-            res[i] = format_first(res[i], len);
-    }
-    return (res);
+	if (!(len = get_length(c)))
+		return (NULL);
+	if (!(res = (unsigned char*)malloc(sizeof(char) * (len + 1))))
+		return (NULL);
+	res[len] = '\0';
+	if (len == 1)
+		return ((res[0] = (unsigned char)c));
+	i = len;
+	while (i)
+	{
+		i--;
+		res[i] = (unsigned char)c;
+		if (i)
+		{
+			res[i] = format_trailing(res[i]);
+			c = c >> 6;
+		}
+		else
+			res[i] = format_first(res[i], len);
+	}
+	return (res);
 }
