@@ -46,25 +46,25 @@ unsigned char			*ft_utf_32_8(wint_t c)
 	int				len;
 	int				i;
 
-	if (!(len = get_length(c)))
-		return (NULL);
-	if (!(res = (unsigned char*)malloc(sizeof(char) * (len + 1))))
+	if (!(len = get_length(c))
+		|| !(res = (unsigned char*)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	res[len] = '\0';
 	if (len == 1)
-		return ((res[0] = (unsigned char)c));
+	{
+		res[0] = (unsigned char)c;
+		return (res);
+	}
 	i = len;
 	while (i)
 	{
 		i--;
-		res[i] = (unsigned char)c;
-		if (i)
+		if ((res[i] = (unsigned char)c))
 		{
 			res[i] = format_trailing(res[i]);
 			c = c >> 6;
 		}
-		else
-			res[i] = format_first(res[i], len);
 	}
+	res[i] = format_first(res[i], len);
 	return (res);
 }
