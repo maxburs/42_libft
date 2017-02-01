@@ -15,18 +15,20 @@
 size_t	ft_wrdcnt(const char *str, char split)
 {
 	size_t	count;
-	size_t	i;
 
 	count = 0;
-	i = 0;
-	while (str[i])
+	if (*str != split)
 	{
-		if (str[i] == split && str[i + 1] != split && str[i + 1])
+		count++;
+	}
+	while (*str)
+	{
+		if (*str == split && str[1] != split && str[1])
 		{
 			count++;
-			i++;
+			str++;
 		}
-		i++;
+		str++;
 	}
 	return (count);
 }
