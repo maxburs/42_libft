@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include <libft.h>
-#include <stdio.h>
 
 void		ft_lstmadd_b(t_listm **start, void *content)
 {

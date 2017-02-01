@@ -13,8 +13,6 @@
 #include <wchar.h>
 #include <libft.h>
 
-#include <stdio.h>
-
 wint_t		ft_utf_16_32(wchar_t **c)
 {
 	wint_t	res;

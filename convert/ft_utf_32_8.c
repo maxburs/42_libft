@@ -15,8 +15,6 @@
 #include <string.h>
 #include <stdlib.h>
 
-#include <stdio.h>
-
 static unsigned char	format_trailing(unsigned char c)
 {
 	return ((c & 0b00111111) | 0b10000000);

@@ -13,7 +13,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include <libft.h>
-#include <stdio.h>
 
 static _Bool	is_whitespace(char c)
 {

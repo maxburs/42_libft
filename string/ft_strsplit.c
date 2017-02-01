@@ -14,6 +14,8 @@
 #include <libft.h>
 #include <stdlib.h>
 
+#include <stdio.h>
+
 static size_t	plength(const char *str, char split)
 {
 	size_t	len;
