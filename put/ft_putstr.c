@@ -16,5 +16,8 @@
 
 void	ft_putstr(const char *s)
 {
-	write(1, s, sizeof(char) * ft_strlen(s));
+	if (!s)
+		ft_putstr("(null)");
+	else
+		write(1, s, sizeof(char) * ft_strlen(s));
 }
