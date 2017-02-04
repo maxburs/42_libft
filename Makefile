@@ -20,6 +20,7 @@ OBJS_CONVERT = \
 
 OBJS_LIST =  \
 	ft_lstadd.o \
+	ft_lstbadd.o \
 	ft_lstdel.o \
 	ft_lstdelone.o \
 	ft_lstiter.o \
