@@ -18,7 +18,7 @@
 
 void	ft_lstbadd(t_list **alst, t_list *new)
 {
-	while(*alst)
+	while (*alst)
 		alst = &((*alst)->next);
 	*alst = new;
 }
