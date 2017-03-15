@@ -39,6 +39,7 @@ SRC_LSTR = \
 	ft_lstr_print.c \
 
 SRC_MEMORY = \
+	ft_bzero.c \
 	ft_memalloc.c \
 	ft_memccpy.c \
 	ft_memchr.c \
@@ -65,7 +66,6 @@ SRC_PUT = \
 	ft_putstrw.c \
 
 SRC_STRING = \
-	ft_bzero.c \
 	ft_strcat.c \
 	ft_strchr.c \
 	ft_strchri.c \
