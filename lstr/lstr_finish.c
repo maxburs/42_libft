@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lststr_finish.c                                 :+:      :+:    :+:   */
+/*   lststr_finish.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mburson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -27,7 +27,7 @@ static size_t	total_length(t_lstr *link)
 	return (size);
 }
 
-char			*ft_lstr_finish(t_lstr **start)
+char			*lstr_finish(t_lstr **start)
 {
 	t_lstr		*link;
 	t_lstr		*link_last;

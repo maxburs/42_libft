@@ -1,35 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   lstprint.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mburson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/04 16:16:20 by mburson           #+#    #+#             */
-/*   Updated: 2016/12/04 16:16:23 by mburson          ###   ########.fr       */
+/*   Created: 2016/12/04 16:05:24 by mburson           #+#    #+#             */
+/*   Updated: 2016/12/04 16:05:26 by mburson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include <libft.h>
-#include <string.h>
 
-t_list	*ft_lstnew(void const *content, size_t content_size)
+void	lstr_print(t_lstr *link)
 {
-	t_list	*link;
-
-	if (!(link = (t_list*)malloc(sizeof(t_list))))
-		return (NULL);
-	if (content)
+	if (!link)
 	{
-		link->content = ft_memdup(content, content_size);
-		link->content_size = content_size;
+		ft_putstr("(null list)\n");
+		return ;
 	}
-	else
+	while (link)
 	{
-		link->content = NULL;
-		link->content_size = 0;
+		ft_putchar('[');
+		if (link->str)
+			ft_putstr(link->str);
+		else
+			ft_putstr("NULL");
+		ft_putstr("]");
+		if (link->constant)
+			ft_putstr(" (c)");
+		else
+			ft_putstr(" (m)");
+		link = link->next;
+		if (link)
+		{
+			ft_putstr(" -> ");
+		}
 	}
-	link->next = NULL;
-	return (link);
+	ft_putchar('\n');
 }

@@ -20,18 +20,11 @@
 typedef struct		s_list
 {
 	void			*content;
-	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
 
-typedef struct		s_listm
-{
-	void			*content;
-	struct s_listm	*next;
-}					t_listm;
-
 /*
-** for ft_lstr_add and ft_lstr_finish
+** for lstr_add and lstr_finish
 */
 typedef struct		s_lstr
 {
@@ -66,28 +59,22 @@ unsigned char		*ft_utf_32_8(wint_t c);
 /*
 ** ./list/
 */
-void				ft_lstadd(t_list **alst, t_list *new);
-void				ft_lstbadd(t_list **alst, t_list *new);
-void				ft_lstdel(t_list **alist, void (*del)(void *, size_t));
-void				ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
-void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
-t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
-t_list				*ft_lstnew(void const *content, size_t content_size);
-void				ft_lstprint(t_list *link);
-
-/*
-** ./listm/
-*/
-void				ft_lstmadd_b(t_listm **start, void *content);
-t_listm				*ft_lstmnew(void *content);
+void				lstadd(t_list **alst, t_list *new);
+void				lstpush(t_list **alst, t_list *new);
+void				lstdel(t_list **alist, void (*del)(void *));
+void				lstdelone(t_list **alst, void (*del)(void *));
+void				lstiter(t_list *lst, void (*f)(t_list *elem));
+t_list				*lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+t_list				*lstnew(void *content);
+void				lstprint(t_list *link);
 
 /*
 ** ./lstr/
 */
-_Bool				ft_lstr_add(t_lstr **start, char *str, _Bool constant);
-char				*ft_lstr_finish(t_lstr **start);
-t_lstr				*ft_lstr_new(char *str, _Bool constant);
-void				ft_lstr_print(t_lstr *link);
+_Bool				lstr_add(t_lstr **start, char *str, _Bool constant);
+char				*lstr_finish(t_lstr **start);
+t_lstr				*lstr_new(char *str, _Bool constant);
+void				lstr_print(t_lstr *link);
 
 /*
 ** ./memory/

@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lststr_add.c                                    :+:      :+:    :+:   */
+/*   lstadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mburson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/12 22:11:49 by mburson           #+#    #+#             */
-/*   Updated: 2017/01/12 22:11:50 by mburson          ###   ########.fr       */
+/*   Created: 2016/12/04 17:34:41 by mburson           #+#    #+#             */
+/*   Updated: 2016/12/04 17:34:43 by mburson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-void		ft_lstmadd_b(t_listm **start, void *content)
+void	lstadd(t_list **alst, t_list *new)
 {
-	t_listm		*link;
-
-	if (!*start)
-	{
-		*start = ft_lstmnew(content);
-		return ;
-	}
-	link = (*start);
-	while (link->next)
-		link = link->next;
-	link->next = ft_lstmnew(content);
+	new->next = *alst;
+	*alst = new;
 }

@@ -1,21 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdel.c                                        :+:      :+:    :+:   */
+/*   lstr_add.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mburson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/04 17:07:33 by mburson           #+#    #+#             */
-/*   Updated: 2016/12/04 17:07:35 by mburson          ###   ########.fr       */
+/*   Created: 2017/01/13 01:50:17 by mburson           #+#    #+#             */
+/*   Updated: 2017/01/13 01:50:18 by mburson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include <libft.h>
+#include <stdlib.h>
+#include <stdbool.h>
 
-void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
+_Bool		lstr_add(t_lstr **start, char *str, _Bool constant)
 {
-	if ((*alst)->next)
-		ft_lstdel(&((*alst)->next), del);
-	ft_lstdelone(alst, del);
+	t_lstr	*link;
+
+	if (!*start)
+	{
+		if (!(*start = lstr_new(str, constant)))
+			return (false);
+		return (true);
+	}
+	link = (*start);
+	while (link->next)
+		link = link->next;
+	if (!(link->next = lstr_new(str, constant)))
+		return (false);
+	return (true);
 }

@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   lstr_new.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mburson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/04 16:35:37 by mburson           #+#    #+#             */
-/*   Updated: 2016/12/04 16:35:38 by mburson          ###   ########.fr       */
+/*   Created: 2017/01/16 19:59:02 by mburson           #+#    #+#             */
+/*   Updated: 2017/01/16 19:59:04 by mburson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include <stdlib.h>
 #include <libft.h>
+#include <string.h>
 
-void	ft_lstdelone(t_list **alst, void (*del)(void*, size_t))
+t_lstr		*lstr_new(char *str, _Bool constant)
 {
-	del((*alst)->content, (*alst)->content_size);
-	free(*alst);
-	*alst = NULL;
+	t_lstr		*link;
+
+	if (!(link = (t_lstr*)malloc(sizeof(t_lstr))))
+		return (NULL);
+	link->str = str;
+	link->next = NULL;
+	link->constant = constant;
+	return (link);
 }

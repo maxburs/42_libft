@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmnew.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mburson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/12 22:21:34 by mburson           #+#    #+#             */
-/*   Updated: 2017/01/12 22:21:36 by mburson          ###   ########.fr       */
+/*   Created: 2016/12/04 17:56:39 by mburson           #+#    #+#             */
+/*   Updated: 2016/12/04 17:56:41 by mburson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include <libft.h>
-#include <string.h>
 
-t_listm		*ft_lstmnew(void *content)
+void	lstiter(t_list *lst, void (*f)(t_list *elem))
 {
-	t_listm		*link;
-
-	if (!(link = (t_listm*)malloc(sizeof(t_listm))))
-		return (NULL);
-	link->content = content;
-	link->next = NULL;
-	return (link);
+	if (!lst)
+		return ;
+	f(lst);
+	lstiter(lst->next, f);
 }

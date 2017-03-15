@@ -19,24 +19,20 @@ SRC_CONVERT = \
 	ft_utf_32_8.c \
 
 SRC_LIST =  \
-	ft_lstadd.c \
-	ft_lstbadd.c \
-	ft_lstdel.c \
-	ft_lstdelone.c \
-	ft_lstiter.c \
-	ft_lstmap.c \
-	ft_lstnew.c \
-	ft_lstprint.c \
-
-SRC_LISTM = \
-	ft_lstmadd_b.c \
-	ft_lstmnew.c \
+	lstadd.c \
+	lstdel.c \
+	lstdelone.c \
+	lstiter.c \
+	lstmap.c \
+	lstnew.c \
+	lstprint.c \
+	lstpush.c \
 
 SRC_LSTR = \
-	ft_lstr_add.c \
-	ft_lstr_finish.c \
-	ft_lstr_new.c \
-	ft_lstr_print.c \
+	lstr_add.c \
+	lstr_finish.c \
+	lstr_new.c \
+	lstr_print.c \
 
 SRC_MEMORY = \
 	ft_bzero.c \
