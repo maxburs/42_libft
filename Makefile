@@ -70,7 +70,6 @@ SRC_STRING = \
 	ft_strcpy.c \
 	ft_strdel.c \
 	ft_strdup.c \
-	ft_strequ.c \
 	ft_striter.c \
 	ft_striteri.c \
 	ft_strjoin.c \
@@ -84,7 +83,6 @@ SRC_STRING = \
 	ft_strncmp.c \
 	ft_strncpy.c \
 	ft_strndup.c \
-	ft_strnequ.c \
 	ft_strnew.c \
 	ft_strnstr.c \
 	ft_strplace.c \
