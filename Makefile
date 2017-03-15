@@ -1,127 +1,123 @@
 NAME = libft.a
 
-OBJS_BOOL = \
-	ft_isalnum.o \
-	ft_isalpha.o \
-	ft_isascii.o \
-	ft_isdigit.o \
-	ft_isprint.o \
+SRC_BOOL = \
+	ft_isalnum.c \
+	ft_isalpha.c \
+	ft_isascii.c \
+	ft_isdigit.c \
+	ft_isprint.c \
 
-OBJS_CONVERT = \
-	ft_absolute.o \
-	ft_atoi.o \
-	ft_itoa.o \
-	ft_itoa_base.o \
-	ft_tolower.o \
-	ft_toupper.o \
-	ft_utf_16_32.o \
-	ft_utf_16_8.o \
-	ft_utf_32_8.o \
+SRC_CONVERT = \
+	ft_absolute.c \
+	ft_atoi.c \
+	ft_itoa.c \
+	ft_itoa_base.c \
+	ft_tolower.c \
+	ft_toupper.c \
+	ft_utf_16_32.c \
+	ft_utf_16_8.c \
+	ft_utf_32_8.c \
 
-OBJS_LIST =  \
-	ft_lstadd.o \
-	ft_lstbadd.o \
-	ft_lstdel.o \
-	ft_lstdelone.o \
-	ft_lstiter.o \
-	ft_lstmap.o \
-	ft_lstnew.o \
-	ft_lstprint.o \
+SRC_LIST =  \
+	ft_lstadd.c \
+	ft_lstbadd.c \
+	ft_lstdel.c \
+	ft_lstdelone.c \
+	ft_lstiter.c \
+	ft_lstmap.c \
+	ft_lstnew.c \
+	ft_lstprint.c \
 
-OBJS_LISTM = \
-	ft_lstmadd_b.o \
-	ft_lstmnew.o \
+SRC_LISTM = \
+	ft_lstmadd_b.c \
+	ft_lstmnew.c \
 
-OBJS_LSTR = \
-	ft_lstr_add.o \
-	ft_lstr_finish.o \
-	ft_lstr_new.o \
-	ft_lstr_print.o \
+SRC_LSTR = \
+	ft_lstr_add.c \
+	ft_lstr_finish.c \
+	ft_lstr_new.c \
+	ft_lstr_print.c \
 
-OBJS_MEMORY = \
-	ft_memalloc.o \
-	ft_memccpy.o \
-	ft_memchr.o \
-	ft_memcmp.o \
-	ft_memcpy.o \
-	ft_memdel.o \
-	ft_memdup.o \
-	ft_memmove.o \
-	ft_memset.o \
+SRC_MEMORY = \
+	ft_memalloc.c \
+	ft_memccpy.c \
+	ft_memchr.c \
+	ft_memcmp.c \
+	ft_memcpy.c \
+	ft_memdel.c \
+	ft_memdup.c \
+	ft_memmove.c \
+	ft_memset.c \
 
-OBJS_OTHER = \
-	ft_numlen.o \
-	ft_numlen_un.o \
+SRC_OTHER = \
+	ft_numlen.c \
+	ft_numlen_un.c \
 
-OBJS_PUT = \
-	ft_putchar.o \
-	ft_putchar_fd.o \
-	ft_putendl.o \
-	ft_putendl_fd.o \
-	ft_putnbr.o \
-	ft_putnbr_fd.o \
-	ft_putstr.o \
-	ft_putstr_fd.o \
-	ft_putstrw.o \
+SRC_PUT = \
+	ft_putchar.c \
+	ft_putchar_fd.c \
+	ft_putendl.c \
+	ft_putendl_fd.c \
+	ft_putnbr.c \
+	ft_putnbr_fd.c \
+	ft_putstr.c \
+	ft_putstr_fd.c \
+	ft_putstrw.c \
 
-OBJS_STRING = \
-	ft_bzero.o \
-	ft_strcat.o \
-	ft_strchr.o \
-	ft_strchri.o \
-	ft_strclr.o \
-	ft_strcmp.o \
-	ft_strcpy.o \
-	ft_strdel.o \
-	ft_strdup.o \
-	ft_strequ.o \
-	ft_striter.o \
-	ft_striteri.o \
-	ft_strjoin.o \
-	ft_strlcat.o \
-	ft_strlen.o \
-	ft_strlenw.o \
-	ft_strmap.o \
-	ft_strmapi.o \
-	ft_strncat.o \
-	ft_strnchr.o \
-	ft_strncmp.o \
-	ft_strncpy.o \
-	ft_strndup.o \
-	ft_strnequ.o \
-	ft_strnew.o \
-	ft_strnstr.o \
-	ft_strplace.o \
-	ft_strrchr.o \
-	ft_strsplit.o \
-	ft_strsplitf.o \
-	ft_strstr.o \
-	ft_strsub.o \
-	ft_strtrim.o \
-	ft_wrdcnt.o \
+SRC_STRING = \
+	ft_bzero.c \
+	ft_strcat.c \
+	ft_strchr.c \
+	ft_strchri.c \
+	ft_strclr.c \
+	ft_strcmp.c \
+	ft_strcpy.c \
+	ft_strdel.c \
+	ft_strdup.c \
+	ft_strequ.c \
+	ft_striter.c \
+	ft_striteri.c \
+	ft_strjoin.c \
+	ft_strlcat.c \
+	ft_strlen.c \
+	ft_strlenw.c \
+	ft_strmap.c \
+	ft_strmapi.c \
+	ft_strncat.c \
+	ft_strnchr.c \
+	ft_strncmp.c \
+	ft_strncpy.c \
+	ft_strndup.c \
+	ft_strnequ.c \
+	ft_strnew.c \
+	ft_strnstr.c \
+	ft_strplace.c \
+	ft_strrchr.c \
+	ft_strsplit.c \
+	ft_strsplitf.c \
+	ft_strstr.c \
+	ft_strsub.c \
+	ft_strtrim.c \
+	ft_wrdcnt.c \
 
-OBJS = \
-	$(addprefix ./bool/,$(OBJS_BOOL)) \
-	$(addprefix ./convert/,$(OBJS_CONVERT)) \
-	$(addprefix ./list/,$(OBJS_LIST)) \
-	$(addprefix ./listm/,$(OBJS_LISTM)) \
-	$(addprefix ./lstr/,$(OBJS_LSTR)) \
-	$(addprefix ./memory/,$(OBJS_MEMORY)) \
-	$(addprefix ./other/,$(OBJS_OTHER)) \
-	$(addprefix ./put/,$(OBJS_PUT)) \
-	$(addprefix ./string/,$(OBJS_STRING)) \
+SRC = \
+	$(addprefix ./bool/,$(SRC_BOOL)) \
+	$(addprefix ./convert/,$(SRC_CONVERT)) \
+	$(addprefix ./list/,$(SRC_LIST)) \
+	$(addprefix ./listm/,$(SRC_LISTM)) \
+	$(addprefix ./lstr/,$(SRC_LSTR)) \
+	$(addprefix ./memory/,$(SRC_MEMORY)) \
+	$(addprefix ./other/,$(SRC_OTHER)) \
+	$(addprefix ./put/,$(SRC_PUT)) \
+	$(addprefix ./string/,$(SRC_STRING)) \
 
-CFLAGS = -Wall -Wextra
-ifndef WNOERROR
-	CFLAGS += -Werror
-endif
-ifdef DEBUG
-	CFLAGS += -g
-endif
+OBJ = $(SRC:.c=.o)
+
+CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJ)
 	ar rc $@ $^
 	ranlib $@
 
@@ -129,9 +125,9 @@ $(NAME): $(OBJS)
 	gcc $(CFLAGS) -I . -c -o $@ $<
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJ)
 fclean: clean
 	rm -f $(NAME)
 re: fclean all
 
-.PHONY: all clean fclean debug
+.PHONY: all clean fclean re
