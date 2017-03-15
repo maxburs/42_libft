@@ -79,6 +79,7 @@ void				lstr_print(t_lstr *link);
 /*
 ** ./memory/
 */
+void				*ft_bzero(void *s, size_t len);
 void				*ft_memalloc(size_t size);
 void				*ft_memccpy(void *dst, const void *src, \
 							int c, size_t n);
@@ -112,12 +113,10 @@ void				ft_putstrw(const wchar_t *str);
 /*
 ** ./string/
 */
-void				*ft_bzero(void *s, size_t len);
 char				*ft_strplace(char *dst, const char *src);
 size_t				ft_wrdcnt(const char *str, char split);
 int					ft_strchri(const char *str, char c);
 char				*ft_strnchr(const char *s, int c, size_t n);
-char				*ft_strsplitf(char **str, char *split);
 size_t				ft_strlen(const char *s);
 size_t				ft_strlenw(const wchar_t *str);
 char				*ft_strcpy(char *dest, const char *src);

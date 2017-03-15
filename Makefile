@@ -88,7 +88,6 @@ SRC_STRING = \
 	ft_strplace.c \
 	ft_strrchr.c \
 	ft_strsplit.c \
-	ft_strsplitf.c \
 	ft_strstr.c \
 	ft_strsub.c \
 	ft_strtrim.c \
