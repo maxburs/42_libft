@@ -28,6 +28,7 @@ SRC_LIST =  \
 	lstprint.c \
 	lstpush.c \
 	lstreverse.c \
+	lstsort.c \
 
 SRC_LSTR = \
 	lstr_add.c \
