@@ -13,9 +13,16 @@
 #include <string.h>
 #include <libft.h>
 
-void	lstdel(t_list **alst, void (*del)(void *))
+void	recurse_me(t_list **alst, void (*del)(void *))
 {
 	if ((*alst)->next)
-		lstdel(&((*alst)->next), del);
+		recurse_me(&((*alst)->next), del);
 	lstdelone(alst, del);
+}
+
+void	lstdel(t_list **alst, void (*del)(void *))
+{
+	if (*alst == NULL)
+		return ;
+	recurse_me(alst, del);
 }

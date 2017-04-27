@@ -67,6 +67,8 @@ void				lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 t_list				*lstnew(void *content);
 void				lstprint(t_list *link);
+void				lstreverse(t_list **alst);
+void				lstsort(t_list **dir_lst, _Bool (compare)(void*, void*));
 
 /*
 ** ./lstr/
