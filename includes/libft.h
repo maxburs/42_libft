@@ -98,6 +98,7 @@ void				*ft_memset(void *b, int c, size_t len);
 */
 int					ft_numlen(long n, long base);
 int					ft_numlen_un(uintmax_t n, uintmax_t base);
+int					get_next_line(char **next_line, char **remainder);
 
 /*
 ** ./put/

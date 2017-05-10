@@ -51,6 +51,7 @@ SRC_MEMORY = \
 SRC_OTHER = \
 	ft_numlen.c \
 	ft_numlen_un.c \
+	get_next_line.c \
 
 SRC_PUT = \
 	ft_putchar.c \
@@ -95,6 +96,15 @@ SRC_STRING = \
 	ft_strtrim.c \
 	ft_wrdcnt.c \
 
+SRC_VECTOR = \
+	vec_add.c \
+	vec_del.c \
+	vec_get.c \
+	vec_init.c \
+	vec_realloc.c \
+	vec_rm.c \
+	vec_set.c \
+
 SRC = \
 	$(addprefix ./bool/,$(SRC_BOOL)) \
 	$(addprefix ./convert/,$(SRC_CONVERT)) \
@@ -105,6 +115,7 @@ SRC = \
 	$(addprefix ./other/,$(SRC_OTHER)) \
 	$(addprefix ./put/,$(SRC_PUT)) \
 	$(addprefix ./string/,$(SRC_STRING)) \
+	$(addprefix ./vector/,$(SRC_VECTOR)) \
 
 OBJ = $(SRC:.c=.o)
 
@@ -117,7 +128,7 @@ $(NAME): $(OBJ)
 	ranlib $@
 
 %.o: %.c
-	gcc $(CFLAGS) -I . -c -o $@ $<
+	gcc $(CFLAGS) -I ./includes -c -o $@ $<
 
 clean:
 	rm -f $(OBJ)
